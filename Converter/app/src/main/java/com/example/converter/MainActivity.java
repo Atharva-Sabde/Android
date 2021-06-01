@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button = findViewById(R.id.submit);
-        textView = findViewById(R.id.textview0);
+        textView = findViewById(R.id.textview1);
         editText = findViewById(R.id.edittext);
 
         button.setOnClickListener(new View.OnClickListener() {
