@@ -13,7 +13,10 @@
             android:label="Second Activity"
             android:parentActivityName=".MainActivity">
 
-        </activity>
+        </activity> <!--   LABEL => FOR SECOND ACTIVITY (heading)   and parentActivity => back button  -->
+
+
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
