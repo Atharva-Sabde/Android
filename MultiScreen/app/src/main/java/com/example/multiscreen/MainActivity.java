@@ -11,7 +11,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     EditText name ;
-    public static final String EXTRA_NAME =  "com.example.multiscreen.extra.NAME" ;
+    public static final String EXTRA_NAME =  "com.example.multiscreen.extra.NAME" ;   // Long name to maintain the absolute uniqueness of the key
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

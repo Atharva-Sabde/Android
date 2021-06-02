@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFEB3B"
     tools:context=".MainActivity">
 
 
@@ -25,8 +26,10 @@
         android:id="@+id/button"
         android:layout_width="210dp"
         android:layout_height="88dp"
+        android:background="#FD0707"
+        android:backgroundTint="#C43737"
         android:onClick="openActivity"
-        android:text="Button"
+        android:text="Proceed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

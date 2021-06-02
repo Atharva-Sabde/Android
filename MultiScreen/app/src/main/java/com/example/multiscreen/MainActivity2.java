@@ -17,7 +17,12 @@ public class MainActivity2 extends AppCompatActivity {
         Intent intent = getIntent();
 
         String name = intent.getStringExtra(MainActivity.EXTRA_NAME);
-
         textView.setText("Your Entered : "+ name);
+
+//        Intent intent1 = new Intent(Packagecontext : this , )
+//        Intent intent1 = new Intent(this , MainActivity3.class);
+
+//        Intent intent2 = new Intent(packageContext: this , MainActivity3.class)
+
     }
 }
