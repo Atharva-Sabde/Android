@@ -41,11 +41,9 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        button = view.findViewById(R.id.button_first);
+        button = view.findViewById(R.id.urlbtn);
         url = view.findViewById(R.id.url);
         button.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View view) {
                 String urlText = url.getText().toString();
