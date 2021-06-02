@@ -13,7 +13,7 @@
     3. Libraries and Android Runtime
     4. Hardware abstraction layer (HAL)
     5. Linux kernel
-![image](https://user-images.githubusercontent.com/67774570/120532091-f4225e00-c3fc-11eb-9222-21800f4d71a7.png)
+![image](https://user-images.githubusercontent.com/67774570/120532091-f4225e00-c3fc-11eb-9222-21800f4d71a7.png , align="left")
 
 
 <hr> 
