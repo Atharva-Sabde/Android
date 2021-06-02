@@ -14,4 +14,4 @@
     4. Hardware abstraction layer (HAL)
     5. Linux kernel
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/43edd873-1bed-42ec-ad18-2ad5401c18f2/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/43edd873-1bed-42ec-ad18-2ad5401c18f2/Untitled.png)
+![image](https://user-images.githubusercontent.com/67774570/120532091-f4225e00-c3fc-11eb-9222-21800f4d71a7.png)
