@@ -6,14 +6,14 @@
 
 <hr>
 
-- Android runs on billions of devices around the world.  | ![image](https://user-images.githubusercontent.com/67774570/120532091-f4225e00-c3fc-11eb-9222-21800f4d71a7.png) 
-- The Android operating system is actually a stack composed of five different layers—five individual software elements. Each has its own role to play and unique ways that developers can directly or indirectly interact with them. |
+- Android runs on billions of devices around the world.   
+- The Android operating system is actually a stack composed of five different layers—five individual software elements. Each has its own role to play and unique ways that developers can directly or indirectly interact with them. 
     1. Apps
     2. Java API framework
     3. Libraries and Android Runtime
     4. Hardware abstraction layer (HAL)
     5. Linux kernel
-
+![image](https://user-images.githubusercontent.com/67774570/120532091-f4225e00-c3fc-11eb-9222-21800f4d71a7.png) 
 
 <hr> 
 **app > java > com.example.helloworld > MainActivity**
