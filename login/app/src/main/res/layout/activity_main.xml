@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFDD1"
+    android:background="@color/colorBackground"
     android:textAlignment="center"
     tools:context=".MainActivity">
 
@@ -24,14 +24,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginbtn"
-        app:layout_constraintVertical_bias="0.268" />
+        app:layout_constraintVertical_bias="0.394" />
 
     <Button
         android:id="@+id/loginbtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/round_bg"
         android:fontFamily="sans-serif-black"
@@ -39,7 +39,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
@@ -69,7 +69,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="40dp"
         android:drawableLeft="@drawable/phone"
         android:drawablePadding="10dp"
@@ -140,11 +140,11 @@
         android:layout_height="wrap_content"
         android:text="----  Or ----"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/googlebtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signupbtn"
-        app:layout_constraintVertical_bias="0.63" />
+        app:layout_constraintVertical_bias="0.284" />
 
     <View
         android:id="@+id/view6"
@@ -168,7 +168,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginbtn"
-        app:layout_constraintVertical_bias="0.239" />
+        app:layout_constraintVertical_bias="0.209" />
 
     <Button
         android:id="@+id/googlebtn"
@@ -182,7 +182,6 @@
         android:text="Sign in with Google"
         android:textAlignment="center"
         android:textSize="12sp"
-        app:flow_wrapMode="none"
         app:layout_constraintBottom_toBottomOf="@+id/view6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
