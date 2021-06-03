@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="265dp"
         android:layout_height="95dp"
-        android:text="Welcome! "
+        android:text="Welcome!"
         android:textColor="@color/white"
         android:textSize="30dp"
         android:typeface="sans"
@@ -35,7 +34,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="353dp" />
+        tools:layout_editor_absoluteY="353dp">
+    </EditText>
 
     <EditText
         android:id="@+id/editTextPhone"
@@ -48,7 +48,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="270dp" />
+        tools:layout_editor_absoluteY="270dp" >
+    </EditText>
 
 <shape xmlns:android='http://schemas.android.com/apk/res/android'>
     <solid android:color="@color/white" />
@@ -68,6 +69,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
