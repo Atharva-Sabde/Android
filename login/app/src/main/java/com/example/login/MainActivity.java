@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void openActivity(View v){
+    public void openActivityverification(View v){
         Toast.makeText(this, "switching to verification...", Toast.LENGTH_SHORT).show();
 
 

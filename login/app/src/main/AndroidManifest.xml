@@ -11,13 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
-        <activity android:name=".MainActivity3"
+
+
+        <activity android:name=".Details2"
+            android:label="More details"
+            android:parentActivityName=".MainActivity3"
+
+            ></activity>
+        <activity
+            android:name=".MainActivity3"
             android:label="details"
-            android:parentActivityName=".MainActivity2"
-            >
-
-
-        </activity>
+            android:parentActivityName=".MainActivity2"></activity>
         <activity
             android:name=".MainActivity2"
             android:label="verification"
