@@ -27,13 +27,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void openActivityverification(View v){
-        Toast.makeText(this, "switching to verification...", Toast.LENGTH_SHORT).show();
+    public void openActivityDetail(View v){
+        Toast.makeText(this, "switching to details...", Toast.LENGTH_SHORT).show();
+        Intent detail = new Intent(this , MainActivity3.class);
 
-
-        Intent verification = new Intent(this , MainActivity2.class);
-
-        startActivity(verification);
+        startActivity(detail);
 
     }
 }

@@ -15,13 +15,11 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
     }
 
-    public void openActivitydetail(View v){
-        Toast.makeText(this, "switching to Details...", Toast.LENGTH_SHORT).show();
+    public void openActivityDetails2(View v){
+        Toast.makeText(this, "switching to details2...", Toast.LENGTH_SHORT).show();
+        Intent details2 = new Intent(this , Details2.class);
 
-
-        Intent details = new Intent(this , MainActivity3.class);
-
-        startActivity(details);
+        startActivity(details2);
     }
 }
 

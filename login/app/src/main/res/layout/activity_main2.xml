@@ -38,7 +38,7 @@
         android:layout_marginEnd="80dp"
         android:background="@drawable/round_bg"
         android:fontFamily="sans-serif-black"
-        android:onClick="openActivitydetail"
+        android:onClick="openActivityDetails2"
         android:text="Verify!"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -94,14 +94,15 @@
 
     <EditText
         android:id="@+id/otp"
-        android:layout_width="211dp"
-        android:layout_height="123dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="227dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint=" -   -   -   -"
+        android:hint="  -  -  -  -  -"
         android:inputType="number"
         android:textSize="56sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginbtn3" />
 

@@ -9,19 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MultiScreen">
-        <activity android:name=".MainActivity3"
+        <activity
+            android:name=".MainActivity4"
+            android:label="@string/title_activity_main4"
+            android:theme="@style/Theme.MultiScreen.NoActionBar"></activity>
+        <activity
+            android:name=".MainActivity3"
             android:label="Final Activity"
-            android:parentActivityName=".MainActivity2"
-            >
-
-        </activity>
+            android:parentActivityName=".MainActivity2"></activity>
         <activity
             android:name=".MainActivity2"
             android:label="Second Activity"
             android:parentActivityName=".MainActivity" /> <!-- LABEL => FOR SECOND ACTIVITY (heading)   and parentActivity => back button -->
         <activity android:name=".MainActivity">
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

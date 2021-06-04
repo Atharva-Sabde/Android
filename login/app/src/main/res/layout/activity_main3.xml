@@ -8,60 +8,60 @@
     tools:context=".MainActivity3">
 
     <EditText
-        android:id="@+id/pincode"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
+        android:id="@+id/age"
+        android:layout_width="158dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="40dp"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="PIN code..."
-        android:inputType="textWebEmailAddress"
+        android:hint="Age"
+        android:inputType="number"
         android:textColor="#000000"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/city"></EditText>
+        app:layout_constraintStart_toEndOf="@+id/number"
+        app:layout_constraintTop_toBottomOf="@+id/email"></EditText>
 
     <EditText
-        android:id="@+id/consumer"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/number"
+        android:layout_width="158dp"
+        android:layout_height="51dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="12dp"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Consumer Type..."
-        android:inputType="textWebEmailAddress"
+        android:hint="Mobile number..."
+        android:inputType="phone"
         android:textColor="#000000"
         android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pincode"></EditText>
+        app:layout_constraintTop_toBottomOf="@+id/email"></EditText>
 
     <Button
-        android:id="@+id/registerbtn"
-        android:layout_width="161dp"
+        android:id="@+id/nextbtn"
+        android:layout_width="332dp"
         android:layout_height="46dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/round_bg"
+        android:drawableEnd="@android:drawable/ic_menu_edit"
         android:fontFamily="sans-serif-black"
-        android:text="Register!"
+        android:onClick="openActivityVerification"
+        android:text="Next "
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/waveBottom2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/city"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/space"
+        app:layout_constraintVertical_bias="0.945" />
 
     <EditText
-        android:id="@+id/city"
+        android:id="@+id/email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -69,25 +69,7 @@
         android:layout_marginEnd="40dp"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="City..."
-        android:inputType="textWebEmailAddress"
-        android:textColor="#000000"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email"></EditText>
-
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="40dp"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="email..."
+        android:hint="Email Id..."
         android:inputType="textWebEmailAddress"
         android:textColor="#000000"
         android:textStyle="bold|italic"
@@ -100,33 +82,20 @@
         android:id="@+id/waveBottom2"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:layout_marginBottom="16dp"
         android:background="@drawable/ic_wave__1_"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginbtn4"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <View
-        android:id="@+id/waveBottomBase2"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/waveBottom2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/loginbtn4"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="40dp"
         android:drawablePadding="10dp"
         android:ems="10"
@@ -135,7 +104,7 @@
         android:textColor="#000000"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/verification2"></EditText>
 
@@ -143,12 +112,12 @@
         android:id="@+id/verification2"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="88dp"
         app:layout_constraintBottom_toTopOf="@+id/emailphone2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/waveTop3"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.344"
         app:srcCompat="@drawable/user01" />
 
@@ -160,5 +129,62 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/waveTopBase" />
+
+    <RadioGroup
+        android:layout_width="341dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/nextbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/space"
+        app:layout_constraintVertical_bias="0.73">
+
+        <RadioButton
+            android:id="@+id/radioButtonuser"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/radio_selector"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:elevation="10dp"
+            android:padding="5dp"
+            android:text="User"
+            android:textAlignment="center"
+            android:textColor="@color/colorBackground"
+            android:textSize="19dp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonservice"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/radio_selector"
+            android:button="@android:color/transparent"
+            android:checked="false"
+            android:elevation="10dp"
+            android:padding="5dp"
+            android:text="Service Provider"
+            android:textAlignment="center"
+            android:textColor="@color/colorBackground"
+            android:textSize="19dp" />
+
+    </RadioGroup>
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="325dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

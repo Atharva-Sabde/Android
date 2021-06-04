@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
     TextView textView;
@@ -23,6 +25,17 @@ public class MainActivity2 extends AppCompatActivity {
 //        Intent intent1 = new Intent(this , MainActivity3.class);
 
 //        Intent intent2 = new Intent(packageContext: this , MainActivity3.class)
+
+    }
+
+
+    public void openActivity(View v){
+        Toast.makeText(this, "Switching to 3rd screen", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "dummy", Toast.LENGTH_SHORT);
+
+        Intent intent = new Intent(this , MainActivity3.class);
+
+        startActivity(intent);
 
     }
 }

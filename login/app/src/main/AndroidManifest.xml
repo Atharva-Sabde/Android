@@ -15,23 +15,26 @@
 
         <activity android:name=".Details2"
             android:label="More details"
-            android:parentActivityName=".MainActivity3"
+            android:parentActivityName=".MainActivity2"/>
 
-            ></activity>
-        <activity
-            android:name=".MainActivity3"
-            android:label="details"
-            android:parentActivityName=".MainActivity2"></activity>
         <activity
             android:name=".MainActivity2"
             android:label="verification"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity3"/>
+
+        <activity
+            android:name=".MainActivity3"
+            android:label="details"
+            android:parentActivityName=".MainActivity"/>
+
+
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

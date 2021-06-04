@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openActivity(View v){
         Toast.makeText(this, "Switching to 2nd Screen", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "dummy", Toast.LENGTH_SHORT);
+//        Toast.makeText(this, "dummy", Toast.LENGTH_SHORT);
 
         Intent intent = new Intent(this , MainActivity2.class);
 
@@ -33,9 +33,6 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_NAME , nameText);
 
         startActivity(intent);
-
-
-
 
     }
 
