@@ -1,4 +1,4 @@
-# * linguist-vendored
+* linguist-vendored
 
 *.css linguist-detectable=false
 *.xml linguist-dectable=true
