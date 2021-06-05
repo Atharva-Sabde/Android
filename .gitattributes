@@ -3,7 +3,8 @@
 
 
 
-
+*.xml linguist-language=xml
+*.js linguist-language=java
 
 
 
