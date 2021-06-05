@@ -1,6 +1,7 @@
 # * linguist-vendored
 
 *.css linguist-detectable=false
+*.xml linguist-dectable=false
 # *.java linguist-vendored=true
 # *.xml linguist-vendored=true
 
