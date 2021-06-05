@@ -45,7 +45,6 @@
         android:layout_height="46dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="4dp"
         android:background="@drawable/round_bg"
         android:drawableEnd="@android:drawable/ic_menu_edit"
         android:fontFamily="sans-serif-black"
@@ -53,12 +52,12 @@
         android:text="Next "
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/waveBottom2"
+        app:layout_constraintBottom_toBottomOf="@+id/waveBottom2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/space"
-        app:layout_constraintVertical_bias="0.945" />
+        app:layout_constraintTop_toTopOf="@+id/waveTop3"
+        app:layout_constraintVertical_bias="0.865" />
 
     <EditText
         android:id="@+id/email"
@@ -134,14 +133,12 @@
         android:layout_width="341dp"
         android:layout_height="64dp"
         android:layout_marginStart="40dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="12dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/nextbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/space"
-        app:layout_constraintVertical_bias="0.73">
+        app:layout_constraintTop_toBottomOf="@+id/space">
 
         <RadioButton
             android:id="@+id/radioButtonuser"
