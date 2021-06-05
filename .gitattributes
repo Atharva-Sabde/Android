@@ -1,4 +1,5 @@
 *.css linguist-language=java
+*.xml linguist-language=xml
 
 
 
