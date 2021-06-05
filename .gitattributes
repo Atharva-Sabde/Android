@@ -1,5 +1,5 @@
 *.xml linguist-vendored=false
-# *.js linguist-language=xml
+*.js linguist-vendored=false
 
 
 
