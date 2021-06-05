@@ -3,7 +3,7 @@
 
 
 
-*.xml linguist-language=xml
+*.css linguist-language=xml
 *.js linguist-language=java
 
 
