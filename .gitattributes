@@ -1,9 +1,10 @@
-# *.css linguist-language=java
-*.js linguist-language=xml
+*.xml linguist-vendored=false
+*.js linguist-vendored=false
 
 
 
-
+*.css linguist-language=xml
+*.js linguist-language=java
 
 
 
