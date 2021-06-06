@@ -7,6 +7,9 @@
     android:background="@color/colorBackground"
     tools:context=".MainActivity2">
 
+
+
+
     <View
         android:id="@+id/waveBottomBase4"
         android:layout_width="wrap_content"
@@ -34,7 +37,7 @@
         android:layout_width="161dp"
         android:layout_height="46dp"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="80dp"
         android:background="@drawable/round_bg"
         android:fontFamily="sans-serif-black"
@@ -43,7 +46,6 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/otp" />
 
@@ -52,7 +54,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/round_bg"
         android:fontFamily="sans-serif-black"
@@ -69,7 +71,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="184dp"
         android:layout_marginEnd="40dp"
         android:drawableLeft="@drawable/phone"
         android:drawablePadding="10dp"
@@ -79,7 +81,7 @@
         android:textColor="#000000"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/waveTop2"></EditText>
 
@@ -96,13 +98,12 @@
         android:id="@+id/otp"
         android:layout_width="227dp"
         android:layout_height="106dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="  -  -  -  -  -"
         android:inputType="number"
         android:textSize="56sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginbtn3" />
 
@@ -112,8 +113,9 @@
         android:layout_height="160dp"
         app:layout_constraintBottom_toTopOf="@+id/emailphone2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/waveTop2"
-        app:layout_constraintVertical_bias="0.344"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_baseline_verified_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,30 +11,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
-
-
-        <activity android:name=".Details2"
+        <activity android:name=".Landing_Page"></activity>
+        <activity android:name=".Forgot_Password" />
+        <activity
+            android:name=".Details2"
             android:label="More details"
-            android:parentActivityName=".MainActivity2"/>
-
+            android:parentActivityName=".MainActivity2" />
         <activity
             android:name=".MainActivity2"
             android:label="verification"
-            android:parentActivityName=".MainActivity3"/>
-
+            android:parentActivityName=".MainActivity3" />
         <activity
             android:name=".MainActivity3"
             android:label="details"
-            android:parentActivityName=".MainActivity"/>
-
-
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 

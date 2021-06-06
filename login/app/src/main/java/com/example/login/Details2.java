@@ -22,7 +22,6 @@ public class Details2 extends AppCompatActivity {
 
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
-
         // -----disable titlebar code
         setContentView(R.layout.activity_details2);
     }
