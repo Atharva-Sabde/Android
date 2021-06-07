@@ -9,8 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Home_Services">
-        <activity android:name=".Signup"></activity>
+
+<!-- ========================================================================================-->
+        <activity android:name=".Details" android:label="Details" android:parentActivityName=".Verification"/>
+        <activity android:name=".HomePage" android:label="Welcome to HomieMart!" android:parentActivityName=".MainActivity"/>
+
+        <activity android:name=".ForgotPassword"  android:label="Forgot Password"  android:parentActivityName=".MainActivity" />
+        <activity android:name=".Signup" android:label="SignUP" android:parentActivityName=".MainActivity" />
+        <activity android:name=".Verification" android:label="Verification" android:parentActivityName=".Signup" />
+<!-- ======================================================================================== -->
+
+
+
+<!-- ======================================================================================== -->
+<!-- ======================================================================================== -->
+
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

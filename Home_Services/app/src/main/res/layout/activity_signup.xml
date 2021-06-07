@@ -4,6 +4,167 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ColorBackground"
     tools:context=".Signup">
 
+
+    <Button
+        android:id="@+id/nextbtn"
+        android:layout_width="332dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/round_bg"
+        android:drawableEnd="@android:drawable/ic_menu_edit"
+        android:fontFamily="sans-serif-black"
+        android:onClick="onClick"
+        android:text="Next "
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/viewBOTTOM"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TXTemail"
+        app:layout_constraintVertical_bias="0.19" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="341dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TXTemail">
+
+        <RadioButton
+            android:id="@+id/radioButtonuser"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/radio_selector"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:elevation="10dp"
+            android:padding="5dp"
+            android:text="User"
+            android:textAlignment="center"
+            android:textColor="@color/ColorBackground"
+            android:textSize="19dp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonservice"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/radio_selector"
+            android:button="@android:color/transparent"
+            android:checked="false"
+            android:elevation="10dp"
+            android:padding="5dp"
+            android:text="Service Provider"
+            android:textAlignment="center"
+            android:textColor="@color/ColorBackground"
+            android:textSize="19dp" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/TXTage"
+        android:layout_width="99dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="28dp"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Age"
+        android:inputType="number"
+        android:textColor="#000000"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TXTemail"></EditText>
+
+    <EditText
+        android:id="@+id/TXTnumber"
+        android:layout_width="158dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="28dp"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Mobile number..."
+        android:inputType="phone"
+        android:textColor="#000000"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TXTemail"></EditText>
+
+    <EditText
+        android:id="@+id/TXTemail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Email Id..."
+        android:inputType="textWebEmailAddress"
+        android:textColor="#000000"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TXTname"></EditText>
+
+    <EditText
+        android:id="@+id/TXTname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Full Name..."
+        android:inputType="textWebEmailAddress"
+        android:textColor="#000000"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"></EditText>
+
+    <View
+        android:id="@+id/viewBOTTOM"
+        android:layout_width="match_parent"
+        android:layout_height="93dp"
+        android:background="@drawable/ic_wavebottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/viewTOP"
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:background="@drawable/ic_wavetop"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="3dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user01" />
 </androidx.constraintlayout.widget.ConstraintLayout>

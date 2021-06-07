@@ -5,48 +5,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ColorBackground"
+    android:onClick="onClick"
     android:textAlignment="center"
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/signupbtn"
-        android:layout_width="298dp"
-        android:layout_height="43dp"
+        android:id="@+id/BTNsignup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="108dp"
         android:background="@drawable/round_bg"
         android:fontFamily="sans-serif-black"
         android:onClick="onClick"
         android:text="New here?   SignUP "
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgotbtn" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/loginbtn"
+        android:id="@+id/BTNlogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/round_bg"
         android:fontFamily="sans-serif-black"
+        android:onClick="onClick"
         android:text="Login"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/TXTpassword" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/TXTpassword"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="308dp"
         android:drawableLeft="@drawable/password"
         android:drawablePadding="10dp"
         android:ems="10"
@@ -55,21 +60,18 @@
         android:textColor="#000000"
         android:textStyle="bold|italic"
         app:endIconMode="password_toggle"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailphone"
-        app:layout_constraintVertical_bias="0.242"
 
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TXTemailnum" />
 
     <EditText
-        android:id="@+id/emailphone"
+        android:id="@+id/TXTemailnum"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="40dp"
         android:drawableLeft="@drawable/phone"
         android:drawablePadding="10dp"
@@ -86,14 +88,14 @@
     <View
         android:id="@+id/waveTopBase"
         android:layout_width="match_parent"
-        android:layout_height="79dp"
+        android:layout_height="69dp"
         android:background="@color/ColorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/topText"
+        android:id="@+id/TXTtagline"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:fontFamily="cursive"
@@ -105,10 +107,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/waveTop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/waveTopBase"
-        app:layout_constraintVertical_bias="0.186">
+        app:layout_constraintVertical_bias="0.193">
 
     </TextView>
 
@@ -116,7 +118,7 @@
     <View
         android:id="@+id/waveTop"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="75dp"
         android:background="@drawable/wave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -132,8 +134,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupbtn"
-        app:layout_constraintVertical_bias="0.758" />
+        app:layout_constraintTop_toBottomOf="@+id/BTNsignup"
+        app:layout_constraintVertical_bias="0.666" />
 
     <TextView
         android:id="@+id/or"
@@ -144,7 +146,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupbtn"
+        app:layout_constraintTop_toBottomOf="@+id/BTNsignup"
         app:layout_constraintVertical_bias="0.232" />
 
     <View
@@ -160,20 +162,23 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/forgotbtn"
+        android:id="@+id/TVBTNforgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="16dp"
+        android:onClick="onClick"
         android:text="Forgot Password ? "
         android:textAlignment="center"
         android:textSize="14sp"
         android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/BTNsignup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginbtn" />
+        app:layout_constraintTop_toBottomOf="@+id/BTNlogin"
+        app:layout_constraintVertical_bias="0.22000003" />
 
     <Button
-        android:id="@+id/googlebtn"
+        android:id="@+id/BTNgoogle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
@@ -181,6 +186,7 @@
         android:background="#00FFFFFF"
 
         android:drawableLeft="@drawable/ic_google_original"
+        android:onClick="onClick"
         android:text="Sign in with Google"
         android:textAlignment="center"
         android:textSize="12sp"
@@ -189,7 +195,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/waveBottom"
-        app:layout_constraintVertical_bias="0.674" />
+        app:layout_constraintVertical_bias="0.937" />
 
     <ProgressBar
         android:id="@+id/loginprogress"
@@ -200,23 +206,22 @@
         android:hapticFeedbackEnabled="true"
         android:progressTint="@color/ColorAccent"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/signupbtn"
+        app:layout_constraintBottom_toTopOf="@+id/BTNsignup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgotbtn"
+        app:layout_constraintTop_toBottomOf="@+id/TVBTNforgot"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        app:layout_constraintBottom_toTopOf="@+id/emailphone"
+        android:id="@+id/IMGlogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/TXTemailnum"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/waveTopBase"
-        app:layout_constraintVertical_bias="0.705"
+        app:layout_constraintVertical_bias="0.696"
         app:srcCompat="@drawable/ic_home_address_50px" />
 
 
