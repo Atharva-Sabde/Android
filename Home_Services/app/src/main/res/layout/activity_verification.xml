@@ -78,7 +78,7 @@
         android:drawableLeft="@drawable/phone"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="number / email"
+        android:hint="Enter Your Mobile Number"
         android:inputType="textWebEmailAddress"
         android:textColor="#000000"
         android:textStyle="bold|italic"

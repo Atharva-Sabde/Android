@@ -14,6 +14,25 @@
     <color name="ColorButton">@color/ColorAccent</color>
 
 
+    <!--    <color name="colorPrimary" >#f57e7e</color>  peach -->
+    <!--    <color name="colorBackground" >#efb5a3</color>-->
+    <!--    <color name="colorButton" >#315f72</color>-->
+
+    <!--        <color name="colorPrimary" >#6789ff</color>   purple-->
+    <!--        <color name="colorBackground" >#a8bbff</color>  -->
+    <!--        <color name="colorButton" >#a8bbff</color>  -->
+
+    <!--        <color name="colorPrimary" >#040F4F</color>   blue orange-->
+    <!--        <color name="colorBackground" >#F5A11D</color>  alt #F2BD94-->
+    <!--        <color name="colorButton" >#040F4F</color>-->
+
+    <!--            <color name="colorPrimary" >#2F2F2B</color>   idk -->
+    <!--        <color name="colorBackground" >#FF7129</color>  alt #F2BD94-->
+    <!--        <color name="colorButton" >@color/colorPrimary</color>-->
+
+    <!--    <color name="colorPrimary" >#12415F</color>   blue orange-->
+    <!--    <color name="colorBackground" >#F5B51B</color>  alt #F2BD94-->
+    <!--    <color name="colorButton" >@color/colorPrimary</color>-->
 
 
 
