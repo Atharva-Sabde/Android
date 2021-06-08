@@ -5,7 +5,7 @@
 
 <!--        <item name="colorPrimary">@color/purple_500</item>-->
         <item name="colorPrimary">@color/ColorAccent</item>     <!-- changed this for button -->
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimaryVariant">@color/ColorAccent</item>  <!-- changed this for top status bar -->
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

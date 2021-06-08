@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
 
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.ColorAccent));   // changes the navigation bar color
 
         setContentView(R.layout.activity_main);
 

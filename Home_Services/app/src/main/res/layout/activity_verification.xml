@@ -8,6 +8,16 @@
     tools:context=".Verification">
 
 
+    <View
+        android:id="@+id/viewTOP2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/ic_wavetop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/verification"
         android:layout_width="100dp"
@@ -16,18 +26,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewTOP2"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.085"
         app:srcCompat="@drawable/ic_baseline_verified_24" />
 
     <Button
-        android:id="@+id/loginbtn2"
+        android:id="@+id/BTNverify"
         android:layout_width="161dp"
         android:layout_height="0dp"
         android:layout_marginBottom="12dp"
         android:background="@drawable/round_bg"
         android:fontFamily="sans-serif-black"
-        android:onClick="onClickVerification"
+        android:onClick="onClick"
         android:text="Verify!"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -36,34 +46,38 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.chaos.view.PinView
-        android:id="@+id/pinView"
+        style="@style/PinWidget.PinView"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginTop="60dp"
-        android:background="@color/ColorBackground"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="40dp"
         android:cursorVisible="true"
         android:gravity="center_horizontal"
         android:inputType="number"
-        app:cursorColor="@color/black"
+        android:itemBackground="@color/gray"
         app:hideLineWhenFilled="true"
         app:itemCount="6"
-        app:itemHeight="50dp"
+        app:itemHeight="55dp"
         app:itemRadius="5dp"
-        app:itemSpacing="10dp"
         app:itemWidth="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginbtn" />
+        app:layout_constraintTop_toBottomOf="@+id/BTNverifyreq"
+        app:lineColor="@color/black" />
 
     <Button
-        android:id="@+id/loginbtn"
-        android:layout_width="331dp"
+        android:id="@+id/BTNverifyreq"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/round_bg"
         android:fontFamily="sans-serif-black"
-        android:text="send verification code!"
+        android:onClick="onClick"
+        android:text="Send OTP!"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,19 +86,22 @@
 
     <EditText
         android:id="@+id/emailphone"
-        android:layout_width="331dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="196dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="40dp"
         android:drawableLeft="@drawable/phone"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Enter Your Mobile Number"
-        android:inputType="textWebEmailAddress"
+        android:inputType="phone"
         android:textColor="#000000"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></EditText>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/viewBOTTOM2"
@@ -94,24 +111,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <View
-        android:id="@+id/viewTOP2"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@drawable/ic_wavetop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/pinView"
+        app:layout_constraintBottom_toBottomOf="@+id/viewBOTTOM2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginbtn"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,31 +8,37 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-
-    <color name="ColorAccent">#FF6D00</color>
-    <color name="ColorBackground">#FFFDD1</color>
-    <color name="ColorButton">@color/ColorAccent</color>
+<color name="gray" >#6D88C5CA</color>
 
 
-    <!--    <color name="colorPrimary" >#f57e7e</color>  peach -->
-    <!--    <color name="colorBackground" >#efb5a3</color>-->
-    <!--    <color name="colorButton" >#315f72</color>-->
+<!--    <color name="ColorAccent">#FF6D00</color>-->
+<!--    <color name="ColorBackground">#FFFDD1</color>-->
+<!--    <color name="ColorButton">@color/ColorAccent</color>-->
 
-    <!--        <color name="colorPrimary" >#6789ff</color>   purple-->
-    <!--        <color name="colorBackground" >#a8bbff</color>  -->
+            <color name="ColorAccent" >#00BFFF</color>
+            <color name="ColorBackground" >#FFFDD1</color>
+            <color name="colorButton" >#315f72</color>
+
+
+<!--        <color name="ColorAccent" >#f57e7e</color>  peach -->
+<!--        <color name="ColorBackground" >#efb5a3</color>-->
+<!--        <color name="colorButton" >#315f72</color>-->
+
+    <!--        <color name="ColorAccent" >#6789ff</color>   purple-->
+    <!--        <color name="ColorBackground" >#a8bbff</color>  -->
     <!--        <color name="colorButton" >#a8bbff</color>  -->
 
-    <!--        <color name="colorPrimary" >#040F4F</color>   blue orange-->
-    <!--        <color name="colorBackground" >#F5A11D</color>  alt #F2BD94-->
-    <!--        <color name="colorButton" >#040F4F</color>-->
+<!--            <color name="ColorAccent" >#040F4F</color>   blue orange-->
+<!--            <color name="ColorBackground" >#F5A11D</color>  alt #F2BD94-->
+<!--            <color name="colorButton" >#040F4F</color>-->
 
-    <!--            <color name="colorPrimary" >#2F2F2B</color>   idk -->
-    <!--        <color name="colorBackground" >#FF7129</color>  alt #F2BD94-->
-    <!--        <color name="colorButton" >@color/colorPrimary</color>-->
+<!--                <color name="ColorAccent" >#2F2F2B</color>   idk -->
+<!--            <color name="ColorBackground" >#FF7129</color>  alt #F2BD94-->
+<!--            <color name="colorButton" >@color/ColorAccent</color>-->
 
-    <!--    <color name="colorPrimary" >#12415F</color>   blue orange-->
-    <!--    <color name="colorBackground" >#F5B51B</color>  alt #F2BD94-->
-    <!--    <color name="colorButton" >@color/colorPrimary</color>-->
+<!--        <color name="ColorAccent" >#12415F</color>   navyblue pink-->
+<!--        <color name="ColorBackground" >#F2BD94</color>  alt #F2BD94-->
+<!--        <color name="colorButton" >@color/ColorAccent</color>-->
 
 
 

@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/user01" />
 
     <Button
-        android:id="@+id/nextbtn"
+        android:id="@+id/BTNnext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -53,7 +53,7 @@
         app:layout_constraintTop_toBottomOf="@+id/TXTemail">
 
         <RadioButton
-            android:id="@+id/radioButtonuser"
+            android:id="@+id/BTNcustomer"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -68,7 +68,7 @@
             android:textSize="19dp" />
 
         <RadioButton
-            android:id="@+id/radioButtonservice"
+            android:id="@+id/BTNworker"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -87,8 +87,10 @@
     <EditText
         android:id="@+id/TXTage"
         android:layout_width="80dp"
-        android:layout_height="49dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Age"
@@ -96,15 +98,17 @@
         android:textColor="#000000"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TXTemail"></EditText>
+        app:layout_constraintTop_toBottomOf="@+id/TXTemail" />
 
     <EditText
         android:id="@+id/TXTnumber"
-        android:layout_width="wrap_content"
-        android:layout_height="51dp"
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Mobile number..."
@@ -112,9 +116,9 @@
         android:textColor="#000000"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TXTemail"></EditText>
+        app:layout_constraintTop_toBottomOf="@+id/TXTemail" />
 
     <EditText
         android:id="@+id/TXTemail"
@@ -132,7 +136,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TXTname"></EditText>
+        app:layout_constraintTop_toBottomOf="@+id/TXTname"/>
 
     <EditText
         android:id="@+id/TXTname"
@@ -144,13 +148,13 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Full Name..."
-        android:inputType="textWebEmailAddress"
+        android:inputType="textPersonName"
         android:textColor="#000000"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewTOP"></EditText>
+        app:layout_constraintTop_toBottomOf="@+id/viewTOP"/>
 
     <View
         android:id="@+id/viewBOTTOM"
