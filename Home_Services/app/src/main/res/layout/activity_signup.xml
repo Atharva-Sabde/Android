@@ -33,6 +33,7 @@
         android:text="Next "
         android:textSize="18sp"
         android:textStyle="bold"
+        android:elevation="10dp"
         app:layout_constraintBottom_toTopOf="@+id/viewBOTTOM"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

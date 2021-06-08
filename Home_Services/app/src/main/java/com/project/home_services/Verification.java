@@ -22,8 +22,6 @@ public class Verification extends AppCompatActivity implements View.OnClickListe
 
         getWindow().setNavigationBarColor(getResources().getColor(R.color.ColorAccent));
 
-
-
         verifyreqq = findViewById(R.id.BTNverifyreq);
         verifyreqq.setOnClickListener(this);
 

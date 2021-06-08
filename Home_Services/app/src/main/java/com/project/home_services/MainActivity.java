@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -12,10 +13,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private TextView forgotpass ;
-    private Button loginbtn ;
+    private TextView forgotpass;
+    private Button loginbtn;
     private Button signupbtn;
     private Button googlebtn;
+
+    private TextView TXTLemail;
+    private TextView TXTLpassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,27 +49,62 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         forgotpass = findViewById(R.id.TVBTNforgot);
         forgotpass.setOnClickListener(this);
+
+
+        TXTLemail = findViewById(R.id.TXTemailnum);
+        TXTLpassword = findViewById(R.id.TXTpassword);
+    }
+
+    private boolean validateEmail() {
+        String email = TXTLemail.getEditableText().toString().trim();
+        if (email.isEmpty()) {
+            TXTLemail.setError("Field can't be empty!");
+            return true;
+        } else {
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                TXTLemail.setError("Please Enter Valid Email-Id");
+                return true;
+            }
+            TXTLemail.setError(null);
+            return false;
+        }
+    }
+
+    private boolean validatePassword() {
+        String password = TXTLpassword.getEditableText().toString().trim();
+        if (password.length() < 6) {
+            TXTLpassword.setError("Enter Complete Password!");
+            return true;
+        } else {
+            TXTLpassword.setError(null);
+            return false;
+        }
     }
 
     @Override
     public void onClick(View v) {
-        switch( v.getId()){
-            case R.id.BTNsignup:
-                startActivity(new Intent(this ,Signup.class));
-                break;
 
-            case R.id.BTNlogin:
-                startActivity(new Intent(this, HomePage.class));
-                break;
+            switch (v.getId()) {
+                case R.id.BTNsignup:
+                    startActivity(new Intent(this, Signup.class));
+                    break;
 
-            case R.id.BTNgoogle:
-                startActivity(new Intent(this ,Signup.class ));
-                break;
+                case R.id.BTNlogin:
+                    if (validateEmail() | validatePassword()) {
+                        return;
+                    } else {
+                        startActivity(new Intent(this, HomePage.class));
+                    }
+                    break;
 
-            case R.id.TVBTNforgot:
-                startActivity(new Intent(this, ForgotPassword.class));
-                break;
-        }
+                case R.id.BTNgoogle:
+                    startActivity(new Intent(this, Signup.class));
+                    break;
+
+                case R.id.TVBTNforgot:
+                    startActivity(new Intent(this, ForgotPassword.class));
+                    break;
+            }
+
     }
-
 }
