@@ -5,7 +5,7 @@
 
 *.css linguist-language=xml
 *.js linguist-language=java
-*.html linguist-languate=xml
+*.html linguist-languate=XML
 
 
 
