@@ -33,10 +33,14 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.google.android.material:material:1.0.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation 'com.chaos.view:pinview:1.4.3'   //for pin view (otp)
 
+//    implementation 'com.android.support:design:28.0.0'   //for adding material textedit for password field
+    implementation 'com.google.android.material:material:1.4.0-rc01'   // new dependency for eye view hide
+    implementation 'androidx.cardview:cardview:1.0.0'
 }

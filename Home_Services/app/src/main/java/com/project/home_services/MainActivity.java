@@ -10,7 +10,9 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView forgotpass;
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button signupbtn;
     private Button googlebtn;
 
+    private ProgressBar LoginProgress;
     private TextView TXTLemail;
     private TextView TXTLpassword;
 
@@ -53,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         TXTLemail = findViewById(R.id.TXTemailnum);
         TXTLpassword = findViewById(R.id.TXTpassword);
+
+        LoginProgress = findViewById(R.id.LoginProgress);
     }
 
     private boolean validateEmail() {
@@ -93,6 +98,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (validateEmail() | validatePassword()) {
                         return;
                     } else {
+                        Toast.makeText(this, "Loggin in...", Toast.LENGTH_SHORT).show();
+                        LoginProgress.setVisibility(View.VISIBLE);
                         startActivity(new Intent(this, HomePage.class));
                     }
                     break;

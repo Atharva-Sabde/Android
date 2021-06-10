@@ -54,17 +54,17 @@ public class Signup extends AppCompatActivity {
     private boolean validateName(){
         String name = TXTname.getEditableText().toString().trim();
         if(name.isEmpty()){
-            TXTname.setError("Fuck you bitch!");
+            TXTname.setError("Field can't be Empty!");
             return true;
         }else if (name.length()<=15) {
-            TXTname.setError("Too short , that's what she said...");
+            TXTname.setError("Please Enter Full Name");
             return true;
         } else{
                 TXTname.setError(null);
                 return false;
             }
-
     }
+
     private boolean validateNumber(){
         String number = TXTnumber.getEditableText().toString().trim();
         if(number.isEmpty()){
@@ -85,7 +85,7 @@ public class Signup extends AppCompatActivity {
             TXTage.setError("Field can't be Empty!");
             return true;
         }else if(age.length()!=2){
-            TXTage.setError("Yo too young , suck some titties...");
+            TXTage.setError("Please add valid Age");
             return true;
         }else{
             TXTage.setError(null);
@@ -94,15 +94,15 @@ public class Signup extends AppCompatActivity {
     }
 
     public void onClick(View v){
-        if(validateEmail() | validateName() | validateNumber() | validateAge()){
-            return;
-        }
-        else{
+//        if(validateEmail() | validateName() | validateNumber() | validateAge()){
+//            return;
+//        }
+//        else{
 
         Toast.makeText(this, "Switching to Verification", Toast.LENGTH_SHORT).show();
         Intent verification = new Intent(this, Verification.class);
 
         startActivity(verification);
         }
-    }
+//    }
 }

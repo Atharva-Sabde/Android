@@ -61,7 +61,7 @@ public class Verification extends AppCompatActivity implements View.OnClickListe
         if(number.isEmpty()){
             OTP.setError("Field can't be Empty!");
             return true;
-        }else if(number.length()!=10){
+        }else if(number.length()!=6){
             OTP.setError("Enter Valid Number!");
             return true;
         }else{
@@ -71,10 +71,10 @@ public class Verification extends AppCompatActivity implements View.OnClickListe
     }
 
     public void onClick(View v){
-        if(validateNumber() | validateOTP()){
-            return;
-        }
-        else{
+//        if(validateNumber() | validateOTP()){
+//            return;
+//        }
+//        else{
             switch (v.getId()){
                 case R.id.BTNverifyreq:
                     Toast.makeText(this, "Sending OTP...", Toast.LENGTH_SHORT).show();
@@ -84,11 +84,14 @@ public class Verification extends AppCompatActivity implements View.OnClickListe
                     if(!validateOTP()){
                         Toast.makeText(this, "Verifying...", Toast.LENGTH_SHORT).show();
                         progressbar.setVisibility(View.VISIBLE);
+
+                        /// verification Firebase
+
                         startActivity(new Intent(this, Details.class));
                     }
                     break;
 
-            }
+//            }
         }
 
 

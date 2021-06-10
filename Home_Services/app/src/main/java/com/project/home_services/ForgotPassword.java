@@ -8,11 +8,14 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class ForgotPassword extends AppCompatActivity {
     private TextView TXTRemail;
+
+    private Button TBTNrecoveryreq;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +24,7 @@ public class ForgotPassword extends AppCompatActivity {
         getWindow().setNavigationBarColor(getResources().getColor(R.color.ColorAccent));
 
         TXTRemail = findViewById(R.id.TXTRemail);
+        TBTNrecoveryreq = findViewById(R.id.BTNrecoveryreq);
     }
     private boolean validateEmail() {
         String email =  TXTRemail.getEditableText().toString().trim();
