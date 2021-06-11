@@ -56,8 +56,8 @@ public class Signup extends AppCompatActivity {
         if(name.isEmpty()){
             TXTname.setError("Field can't be Empty!");
             return true;
-        }else if (name.length()<=15) {
-            TXTname.setError("Please Enter Full Name");
+        }else if (name.length()>=30) {
+            TXTname.setError("Please Enter only your Name");
             return true;
         } else{
                 TXTname.setError(null);

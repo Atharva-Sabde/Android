@@ -83,9 +83,9 @@ public class PasswordSetup extends AppCompatActivity {
         Toast.makeText(this, "Registeration in progress...", Toast.LENGTH_SHORT).show();
         prgrsbr.setVisibility(View.VISIBLE);
 
-        Intent passwordsetup = new Intent(this, MainActivity.class);
+        Intent mainpage  = new Intent(this, MainActivity.class);
 
-        startActivity(passwordsetup);
+        startActivity(mainpage);
 
         }
 
