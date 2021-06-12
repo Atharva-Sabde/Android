@@ -28,7 +28,8 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import java.util.concurrent.TimeUnit;
 
 public class Verification extends AppCompatActivity implements View.OnClickListener{
-    private Intent passwordsetup;
+
+    private Intent Details ;
     private Button verifyreqq;
     private Button verifyy;
     private TextView TXTVnumber;
@@ -65,7 +66,7 @@ public class Verification extends AppCompatActivity implements View.OnClickListe
         progressbar = findViewById(R.id.VerifyProgressbar);
 
         mAuth = FirebaseAuth.getInstance();
-        passwordsetup = new Intent(this, HomePage.class);
+
     }
 
     private boolean validateNumber() {
@@ -96,7 +97,7 @@ public class Verification extends AppCompatActivity implements View.OnClickListe
         }
     }
 //    public void sendOTP(View v1){
-//        if(validateNumber()){ return; }else{
+//         if(validateNumber()){ return; }else{
 //            Toast.makeText(this, "Sending OTP...", Toast.LENGTH_SHORT).show();
 //            System.out.println("TEssting...");
 //            verifyreqq.setVisibility(View.INVISIBLE);
@@ -111,34 +112,37 @@ public class Verification extends AppCompatActivity implements View.OnClickListe
 //            return;
 //        } else {
             switch (V.getId()) {
-                case R.id.BTNsendOTP:                        // AUTOMATIC VERIFICATION
-                    Toast.makeText(this, "Sending OTP...", Toast.LENGTH_SHORT).show();
-                    System.out.println("TEssting...");
-                    verifyreqq.setVisibility(View.INVISIBLE);
-                    progressbar.setVisibility(View.VISIBLE);
-                    sendVerificationCodeToUser(finalNumber);
-                    break;
+//                case R.id.BTNsendOTP:                        // AUTOMATIC VERIFICATION
+//                    Toast.makeText(this, "Sending OTP...", Toast.LENGTH_SHORT).show();
+//                    System.out.println("TEssting...");
+//                    pd.setTitle("Sending OTP");
+//                    verifyreqq.setVisibility(View.INVISIBLE);
+//                    progressbar.setVisibility(View.VISIBLE);
+//                    sendVerificationCodeToUser(finalNumber);
+//                    break;
 
                 case R.id.BTNverify:                           // MANUAL OTP VERIFICATION
                     Toast.makeText(this, "Testing....", Toast.LENGTH_SHORT).show();
 //                    if (validateOTP()) {
 //                        return;
 //                    }else{
-                        Toast.makeText(this, "Verifying...", Toast.LENGTH_SHORT).show();
-                        progressbar.setVisibility(View.VISIBLE);
-                        String code = OTP.getText().toString().trim();
-                        if(!code.isEmpty()){
-                            verifyOTP(code , codebySystem);           // ----------- MANUAL VERIFICATION ------------
-                        }else{
-//                            Toast.makeText(this, "Empty OTP", Toast.LENGTH_SHORT).show();
-                            Toast.makeText(this, finalNumber, Toast.LENGTH_SHORT).show();
-                        }
-//                    }
+                    Toast.makeText(this, "Verifying...", Toast.LENGTH_SHORT).show();
+//                    progressbar.setVisibility(View.VISIBLE);
+                    Details  = new Intent(this, Details.class);
+                    startActivity(Details);
                     break;
+//                        String code = OTP.getText().toString().trim();
+//                        if(!code.isEmpty()){
+//                            verifyOTP(code , codebySystem);           // ----------- MANUAL VERIFICATION ------------
+//                        }else{
+////                            Toast.makeText(this, "Empty OTP", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(this, finalNumber, Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
 
-//                default:
-//                    Toast.makeText(this, "____", Toast.LENGTH_SHORT).show();
-//                    break;
+                default:
+                    Toast.makeText(this, "____", Toast.LENGTH_SHORT).show();
+                    break;
             }               //switch close
 //        }                   //else close
     }                        //method close
@@ -196,7 +200,7 @@ public class Verification extends AppCompatActivity implements View.OnClickListe
 //                            FirebaseUser user = task.getResult().getUser();
 //                            // Update UI
                         Toast.makeText(Verification.this, "Verification SUCCESSFULLLL...", Toast.LENGTH_SHORT).show();
-                        startActivity(passwordsetup);
+//                        startActivity(passwordsetup);
 
                     } else {
 //                            // Sign in failed, display a message and update the UI

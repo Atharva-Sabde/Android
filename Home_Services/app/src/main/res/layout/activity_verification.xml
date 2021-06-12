@@ -5,10 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ColorBackground"
+    android:onClick="onClick"
     tools:context=".Verification">
 
-
-    
 
     <View
         android:id="@+id/viewTOP2"
@@ -99,8 +98,8 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Enter Your Mobile Number"
-        android:text="+91"
         android:inputType="phone"
+        android:text="+91"
         android:textColor="#000000"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
