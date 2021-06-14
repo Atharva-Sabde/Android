@@ -8,6 +8,35 @@
     tools:context=".Verification">
 
 
+    <Button
+        android:id="@+id/BTNverifiednext"
+        android:layout_width="161dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/round_bg"
+        android:fontFamily="sans-serif-black"
+        android:text="Next"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/viewBOTTOM2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gifverify" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifverify"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/tick"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/viewBOTTOM2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.428" />
+
     <View
         android:id="@+id/viewTOP2"
         android:layout_width="match_parent"
@@ -17,6 +46,17 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mail"
+        app:layout_constraintBottom_toTopOf="@+id/TXTVnumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.763" />
 
     <ImageView
         android:id="@+id/verification"
@@ -28,7 +68,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.085"
-        app:srcCompat="@drawable/ic_baseline_verified_24" />
+        app:srcCompat="@drawable/ic_baseline_verified_24"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/BTNverify"
@@ -40,11 +81,12 @@
         android:text="Verify!"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/viewBOTTOM2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@+id/OTP" />
+        app:layout_constraintTop_toBottomOf="@+id/OTP"
+        app:layout_constraintVertical_bias="0.283" />
 
     <com.chaos.view.PinView
         android:id="@+id/OTP"
@@ -52,12 +94,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="40dp"
         android:cursorVisible="true"
         android:gravity="center_horizontal"
         android:inputType="number"
         android:itemBackground="@color/gray"
+        android:visibility="invisible"
         app:hideLineWhenFilled="true"
         app:itemCount="6"
         app:itemHeight="55dp"
@@ -67,7 +110,6 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BTNsendOTP"
-        android:visibility="invisible"
         app:lineColor="@color/black" />
 
     <Button

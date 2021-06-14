@@ -27,6 +27,8 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class Verification extends AppCompatActivity  {
     private Button sendOTP;
     private TextView shownumber;
@@ -39,9 +41,11 @@ public class Verification extends AppCompatActivity  {
 
 
     private Intent Details;
-
-
+    private Intent Signup;
+    private GifImageView mail;
+    private GifImageView verify;
     private Button verifyy;
+    private Button verifynext;
     private TextView TXTVnumber;
     private PinView OTP;
     private ProgressBar progressbar;
@@ -56,7 +60,9 @@ public class Verification extends AppCompatActivity  {
         pd = new ProgressDialog(this);
         pd.setCanceledOnTouchOutside(false);
         Details =  new Intent(this, Details.class);
-
+        Signup =  new Intent(this, Signup.class);
+        mail = findViewById(R.id.gifmail);
+        verify = findViewById(R.id.gifverify);
         progressbar = findViewById(R.id.VerifyProgressbar);
         mAuth = FirebaseAuth.getInstance();
 
@@ -66,20 +72,20 @@ public class Verification extends AppCompatActivity  {
 
         sendOTP = findViewById(R.id.BTNsendOTP);
         verifyy = findViewById(R.id.BTNverify);
-
+        verifynext= findViewById(R.id.BTNverifiednext);
 
         sendOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(validateNumber()){
+                if(!validateNumber()){
                     return;
                 }else{
                     sendOTP.setVisibility(View.INVISIBLE);
                     OTP.setVisibility(View.VISIBLE);
                     verifyy.setVisibility(View.VISIBLE);
                     finalNumber = TXTVnumber.getEditableText().toString().trim();
-                    shownumber.setText("Sending OTP to  "+finalNumber);
-                    sendVerification(finalNumber);
+                    shownumber.setText("OTP sent to  "+finalNumber);
+//                    sendVerification(finalNumber);
                     Toast.makeText(Verification.this, "OKay", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -88,26 +94,38 @@ public class Verification extends AppCompatActivity  {
         verifyy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Toast.makeText(Verification.this, "Verifying...", Toast.LENGTH_SHORT).show();
                 codebyuser = OTP.getEditableText().toString().trim();
 
-
-                PhoneAuthCredential credential = PhoneAuthProvider.getCredential(codebysystem, codebyuser);
-                mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull  Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+//                PhoneAuthCredential credential = PhoneAuthProvider.getCredential(codebysystem, codebyuser);
+//                mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull  Task<AuthResult> task) {
+//                        if(task.isSuccessful()){
                             Toast.makeText(Verification.this, "LOGIN SUCCESSFUL", Toast.LENGTH_SHORT).show();
-                            startActivity(Details);
-                            finishAffinity();
-                        }else{
-                            Toast.makeText(Verification.this, "FAILED", Toast.LENGTH_SHORT).show();
-                        }
+                            mail.setVisibility(View.INVISIBLE);
+                            OTP.setVisibility(View.INVISIBLE);
+                            verifyy.setVisibility(View.INVISIBLE);
+                            TXTVnumber.setVisibility(View.INVISIBLE);
+                            shownumber.setVisibility(View.INVISIBLE);
+                            verify.setVisibility(View.VISIBLE);
+                            verifynext.setVisibility(View.VISIBLE);
+//                            finishAffinity();
+//                        }else{
+//                            Toast.makeText(Verification.this, "FAILED", Toast.LENGTH_SHORT).show();
+//                        }
                     }
-                });
-            }
+//                });
+//            }
         });
 
+        verifynext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(Details);
+            }
+        });
 
     }
 
