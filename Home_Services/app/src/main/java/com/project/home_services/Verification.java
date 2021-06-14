@@ -27,54 +27,124 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class Verification extends AppCompatActivity implements View.OnClickListener{
+public class Verification extends AppCompatActivity  {
+    private Button sendOTP;
+    private TextView shownumber;
+    private String finalNumber;
+    private String codebysystem;
+    private  String codebyuser;
+    private FirebaseAuth mAuth;
 
-    private Intent Details ;
-    private Button verifyreqq;
+
+
+
+    private Intent Details;
+
+
     private Button verifyy;
     private TextView TXTVnumber;
-    private  String finalNumber;
     private PinView OTP;
     private ProgressBar progressbar;
     private ProgressDialog pd;
-
-    private FirebaseAuth mAuth;// ...
-
-
-    private String codebySystem;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
-
         getWindow().setNavigationBarColor(getResources().getColor(R.color.ColorAccent));
-
         pd = new ProgressDialog(this);
-        pd.setTitle("Please Wait...");
         pd.setCanceledOnTouchOutside(false);
+        Details =  new Intent(this, Details.class);
 
-        verifyreqq = findViewById(R.id.BTNsendOTP);
-        verifyreqq.setOnClickListener(this);
-
-        verifyy = findViewById(R.id.BTNverify);
-        verifyy.setOnClickListener(this);
-
-        TXTVnumber = findViewById(R.id.TXTVnumber);
-        OTP = findViewById(R.id.OTP);
         progressbar = findViewById(R.id.VerifyProgressbar);
-
         mAuth = FirebaseAuth.getInstance();
 
+        TXTVnumber = findViewById(R.id.TXTVnumber);
+        shownumber = findViewById(R.id.shownumber);
+        OTP = findViewById(R.id.OTP);
+
+        sendOTP = findViewById(R.id.BTNsendOTP);
+        verifyy = findViewById(R.id.BTNverify);
+
+
+        sendOTP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(validateNumber()){
+                    return;
+                }else{
+                    sendOTP.setVisibility(View.INVISIBLE);
+                    OTP.setVisibility(View.VISIBLE);
+                    verifyy.setVisibility(View.VISIBLE);
+                    finalNumber = TXTVnumber.getEditableText().toString().trim();
+                    shownumber.setText("Sending OTP to  "+finalNumber);
+                    sendVerification(finalNumber);
+                    Toast.makeText(Verification.this, "OKay", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        verifyy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Verification.this, "Verifying...", Toast.LENGTH_SHORT).show();
+                codebyuser = OTP.getEditableText().toString().trim();
+
+
+                PhoneAuthCredential credential = PhoneAuthProvider.getCredential(codebysystem, codebyuser);
+                mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull  Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(Verification.this, "LOGIN SUCCESSFUL", Toast.LENGTH_SHORT).show();
+                            startActivity(Details);
+                            finishAffinity();
+                        }else{
+                            Toast.makeText(Verification.this, "FAILED", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+        });
+
+
     }
+
+    private void sendVerification(String phonenumber) {
+        shownumber.setText("testing method  "+phonenumber);
+        PhoneAuthOptions options = PhoneAuthOptions.newBuilder(mAuth)
+                .setPhoneNumber(phonenumber)
+                .setTimeout(60L ,TimeUnit.SECONDS)
+                .setActivity(this)
+                .setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                    @Override
+                    public void onVerificationCompleted(@NonNull  PhoneAuthCredential phoneAuthCredential) {
+
+                    }
+
+                    @Override
+                    public void onVerificationFailed(@NonNull FirebaseException e) {
+
+                    }
+
+                    @Override
+                    public void onCodeSent(@NonNull String s, @NonNull  PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                        super.onCodeSent(s, forceResendingToken);
+                        codebysystem = s;
+                    }
+                }).build();
+
+        PhoneAuthProvider.verifyPhoneNumber(options);
+
+    }  // send verification method closed
 
     private boolean validateNumber() {
         String number = TXTVnumber.getEditableText().toString().trim();
         if (number.isEmpty()) {
             TXTVnumber.setError("Field can't be Empty!");
             return true;
-        } else if (number.length()<10) {
+        } else if (number.length() < 10) {
             TXTVnumber.setError("Enter Valid Number!");
             return true;
         } else {
@@ -106,112 +176,46 @@ public class Verification extends AppCompatActivity implements View.OnClickListe
 //        }
 //    }
 
-    public void onClick(View V) {
-        finalNumber = TXTVnumber.getEditableText().toString().trim();
-//        if (validateNumber()) {
-//            return;
-//        } else {
-            switch (V.getId()) {
+//    public void onClick(View V) {
+//        finalNumber = TXTVnumber.getEditableText().toString().trim();
+////        if (validateNumber()) {
+////            return;
+////        } else {
+//            switch (V.getId()) {
 //                case R.id.BTNsendOTP:                        // AUTOMATIC VERIFICATION
-//                    Toast.makeText(this, "Sending OTP...", Toast.LENGTH_SHORT).show();
-//                    System.out.println("TEssting...");
-//                    pd.setTitle("Sending OTP");
 //                    verifyreqq.setVisibility(View.INVISIBLE);
 //                    progressbar.setVisibility(View.VISIBLE);
-//                    sendVerificationCodeToUser(finalNumber);
+////                    Toast.makeText(this, "Sending OTP...", Toast.LENGTH_SHORT).show();
+//
+//                    pd.setTitle("verification code");
+//                    pd.setMessage("Requesting OTP");
+//                    pd.show();
+////                    pd.dismiss();
 //                    break;
-
-                case R.id.BTNverify:                           // MANUAL OTP VERIFICATION
-                    Toast.makeText(this, "Testing....", Toast.LENGTH_SHORT).show();
-//                    if (validateOTP()) {
-//                        return;
-//                    }else{
-                    Toast.makeText(this, "Verifying...", Toast.LENGTH_SHORT).show();
-//                    progressbar.setVisibility(View.VISIBLE);
-                    Details  = new Intent(this, Details.class);
-                    startActivity(Details);
-                    break;
-//                        String code = OTP.getText().toString().trim();
-//                        if(!code.isEmpty()){
-//                            verifyOTP(code , codebySystem);           // ----------- MANUAL VERIFICATION ------------
-//                        }else{
-////                            Toast.makeText(this, "Empty OTP", Toast.LENGTH_SHORT).show();
-//                            Toast.makeText(this, finalNumber, Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-
-                default:
-                    Toast.makeText(this, "____", Toast.LENGTH_SHORT).show();
-                    break;
-            }               //switch close
-//        }                   //else close
-    }                        //method close
-
-    private void sendVerificationCodeToUser(String phoneNumber) {
-//        finalNumber = "+918237571769";
-        PhoneAuthOptions options =
-                PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber(phoneNumber)       // Phone number to verify
-                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                        .setActivity((Activity) TaskExecutors.MAIN_THREAD)                 // Activity (for callback binding)
-                        .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
-                        .build();
-        Toast.makeText(this, "Reached method 1", Toast.LENGTH_SHORT).show();
-        PhoneAuthProvider.verifyPhoneNumber(options);
-    }
-
-
-    //     =========================   PHONE AUTH PROVIDER ==============================
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks =
-            new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-                @Override
-                public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                    super.onCodeSent(s, forceResendingToken);
-                    codebySystem = s;
-                }
-                @Override
-                public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                    String code = phoneAuthCredential.getSmsCode();
-                    if(code!=null){
-                        OTP.setText(code);
-                        Toast.makeText(Verification.this, "Verifying...", Toast.LENGTH_SHORT).show();
-                        progressbar.setVisibility(View.VISIBLE);
-                        verifyOTP(code , codebySystem);                             // ----------- AUTOMATIC VERIFICATION --------
-                    }
-                }
-                @Override
-                public void onVerificationFailed(@NonNull FirebaseException e) {
-                    Toast.makeText(Verification.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            };      // PHONE AUTH PROVIDE COMPLETE
-
-    private void verifyOTP(String xcode , String xcodebySystem) {
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(xcodebySystem, xcode);
-        signInWithPhoneAuthCredential(credential);
-    }
-
-    private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
-        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        firebaseAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-//                            // Sign in success, update UI with the signed-in user's information
-//                            Log.d(TAG, "signInWithCredential:success");
-//                            FirebaseUser user = task.getResult().getUser();
-//                            // Update UI
-                        Toast.makeText(Verification.this, "Verification SUCCESSFULLLL...", Toast.LENGTH_SHORT).show();
-//                        startActivity(passwordsetup);
-
-                    } else {
-//                            // Sign in failed, display a message and update the UI
-                            pd.setTitle("SignUP failed...");
-//                            Log.w(TAG, "signInWithCredential:failure", task.getException());
-                        if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
-                            // The verification code entered was invalid
-                            Toast.makeText(Verification.this, "SignupFailed", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-    }
-
-}   // class close
+//
+//                case R.id.BTNverify:                           // MANUAL OTP VERIFICATION
+//                    Toast.makeText(this, "Testing....", Toast.LENGTH_SHORT).show();
+////                    if (validateOTP()) {
+////                        return;
+////                    }else{
+//                    Toast.makeText(this, "Verifying...", Toast.LENGTH_SHORT).show();
+////                    progressbar.setVisibility(View.VISIBLE);
+//                    Details = new Intent(this, Details.class);
+//                    startActivity(Details);
+//                    break;
+////                        String code = OTP.getText().toString().trim();
+////                        if(!code.isEmpty()){
+////                            verifyOTP(code , codebySystem);           // ----------- MANUAL VERIFICATION ------------
+////                        }else{
+//////                            Toast.makeText(this, "Empty OTP", Toast.LENGTH_SHORT).show();
+////                            Toast.makeText(this, finalNumber, Toast.LENGTH_SHORT).show();
+////                        }
+////                    }
+//
+//                default:
+//                    Toast.makeText(this, "__Default__", Toast.LENGTH_SHORT).show();
+//                    break;
+//            }               //switch close
+////        }                   //else close
+//        }                        //method close
+}
