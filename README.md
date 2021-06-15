@@ -50,6 +50,7 @@ When we click the run button in Android Studio, here are some of the things that
 
 <hr>
 <hr>
+
 # FIREBASE AUTHENTICATION
 
 ### Advantages:
