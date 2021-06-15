@@ -51,3 +51,20 @@ When we click the run button in Android Studio, here are some of the things that
 <hr>
 <hr>
 # FIREBASE AUTHENTICATION
+
+### Advantages:
+
+- Super easy and quick to implement.
+- No server side configuration needed. No PHP Scripts and No Database Designs.
+- Realtime update without using GCM.
+- Autoscaling built-in**>** Can start for free (only need to start paying once we hit 50 connections)
+- Robust APIs for Javascript (including several frameworks like Angular), iOS, and Android
+- Built-in support for authentication services like Facebook, Google, and Twitter
+- Declarative Security Rules model allows us to enforce read/write privileges and data validation throughout the tree
+
+### Disadvantages:
+
+- Need to build indexes manually
+- May need to build “event log” manually as well (in separate sub-tree?)
+- Implementation of REST API could be difficult on embedded platforms
+- Data validation rules do not support complex objects directly (you’d need to validate individual child nodes separately)
