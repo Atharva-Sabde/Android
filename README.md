@@ -71,3 +71,18 @@ When we click the run button in Android Studio, here are some of the things that
 - Data validation rules do not support complex objects directly (you’d need to validate individual child nodes separately)
 
 ![image](https://user-images.githubusercontent.com/67774570/122086056-fa630200-ce20-11eb-9c66-9ae5b3bda47f.png)
+
+### Verifying SHA1 number :
+
+1. Gradle > Task > android > signingReport > (report will be generated)
+2. Copy the SHA1 fingerprint > go to firebase site >
+3. Project settings > add Fingerprint > paste 
+4. Build app again.
+
+### Removing CAPTCHA verification from OTP signUP:
+
+1. You need to add sha-256 of debug varient (maybe, mostly same for all) in the project settings.
+2. visit [console.cloud.google.com](http://console.cloud.google.com) and login with the same account as firebase > select the project 
+3. APIs and services > Enable APIs and services > search for Android Device verification
+4. Android Device Verification > Enable 
+5. Done.
