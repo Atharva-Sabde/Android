@@ -2,6 +2,7 @@ package com.project.home_services;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -28,7 +29,7 @@ public class PasswordSetup extends AppCompatActivity {
     private EditText email;
     private TextInputEditText password;
     private TextInputEditText confirmpassword;
-
+    private ProgressDialog pd;
     private Button register;
     private ProgressBar prgrsbr;
 
@@ -36,6 +37,8 @@ public class PasswordSetup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_setup);
+        pd = new ProgressDialog(this);
+        pd.setCanceledOnTouchOutside(true);
 
         email = findViewById(R.id.TXTUserEmail);
         password= findViewById(R.id.TXTUserPassword);
@@ -81,12 +84,12 @@ public class PasswordSetup extends AppCompatActivity {
             return ;
         }else{
         Toast.makeText(this, "Registeration in progress...", Toast.LENGTH_SHORT).show();
-        prgrsbr.setVisibility(View.VISIBLE);
+//        prgrsbr.setVisibility(View.VISIBLE);
 
         Intent mainpage  = new Intent(this, MainActivity.class);
-
+        pd.setTitle("Registeration");
+        pd.setMessage("You have been successfully registered , login using your email and password to continue...");
         startActivity(mainpage);
-
         }
 
 

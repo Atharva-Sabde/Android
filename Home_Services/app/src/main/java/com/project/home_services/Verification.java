@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,26 +32,25 @@ import pl.droidsonroids.gif.GifImageView;
 
 public class Verification extends AppCompatActivity  {
     private Button sendOTP;
+    private Button verifyy;
+    private Button verifynext;
+
     private TextView shownumber;
-    private String finalNumber;
-    private String codebysystem;
-    private  String codebyuser;
+    private EditText TXTVnumber;
+    private PinView OTP;
+
     private FirebaseAuth mAuth;
 
-
-
+    private String finalNumber;
+    private String codebysystem;
+    private String codebyuser;
 
     private Intent Details;
     private Intent Signup;
     private GifImageView mail;
     private GifImageView verify;
-    private Button verifyy;
-    private Button verifynext;
-    private TextView TXTVnumber;
-    private PinView OTP;
     private ProgressBar progressbar;
     private ProgressDialog pd;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,26 +58,27 @@ public class Verification extends AppCompatActivity  {
         setContentView(R.layout.activity_verification);
         getWindow().setNavigationBarColor(getResources().getColor(R.color.ColorAccent));
         pd = new ProgressDialog(this);
-        pd.setCanceledOnTouchOutside(false);
+        pd.setCanceledOnTouchOutside(true);
         Details =  new Intent(this, Details.class);
         Signup =  new Intent(this, Signup.class);
-        mail = findViewById(R.id.gifmail);
-        verify = findViewById(R.id.gifverify);
-        progressbar = findViewById(R.id.VerifyProgressbar);
+        finalNumber = getIntent().getStringExtra("number");
         mAuth = FirebaseAuth.getInstance();
 
         TXTVnumber = findViewById(R.id.TXTVnumber);
-        shownumber = findViewById(R.id.shownumber);
+        TXTVnumber.setText("+91"+finalNumber);
         OTP = findViewById(R.id.OTP);
-
+        shownumber = findViewById(R.id.shownumber);
         sendOTP = findViewById(R.id.BTNsendOTP);
         verifyy = findViewById(R.id.BTNverify);
         verifynext= findViewById(R.id.BTNverifiednext);
+        progressbar = findViewById(R.id.VerifyProgressbar);
+        mail = findViewById(R.id.gifmail);
+        verify = findViewById(R.id.gifverify);
 
         sendOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!validateNumber()){
+                if(validateNumber()){
                     return;
                 }else{
                     sendOTP.setVisibility(View.INVISIBLE);
@@ -85,8 +86,8 @@ public class Verification extends AppCompatActivity  {
                     verifyy.setVisibility(View.VISIBLE);
                     finalNumber = TXTVnumber.getEditableText().toString().trim();
                     shownumber.setText("OTP sent to  "+finalNumber);
-//                    sendVerification(finalNumber);
-                    Toast.makeText(Verification.this, "OKay", Toast.LENGTH_SHORT).show();
+                    sendVerification(finalNumber);
+                    Toast.makeText(Verification.this, "starting verification... ", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -94,30 +95,36 @@ public class Verification extends AppCompatActivity  {
         verifyy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(validateOTP()){
+                    return;
+                }else {
+                    Toast.makeText(Verification.this, "Verifying...", Toast.LENGTH_SHORT).show();
+                    codebyuser = OTP.getEditableText().toString().trim();
 
-                Toast.makeText(Verification.this, "Verifying...", Toast.LENGTH_SHORT).show();
-                codebyuser = OTP.getEditableText().toString().trim();
-
-//                PhoneAuthCredential credential = PhoneAuthProvider.getCredential(codebysystem, codebyuser);
-//                mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull  Task<AuthResult> task) {
-//                        if(task.isSuccessful()){
-                            Toast.makeText(Verification.this, "LOGIN SUCCESSFUL", Toast.LENGTH_SHORT).show();
-                            mail.setVisibility(View.INVISIBLE);
-                            OTP.setVisibility(View.INVISIBLE);
-                            verifyy.setVisibility(View.INVISIBLE);
-                            TXTVnumber.setVisibility(View.INVISIBLE);
-                            shownumber.setVisibility(View.INVISIBLE);
-                            verify.setVisibility(View.VISIBLE);
-                            verifynext.setVisibility(View.VISIBLE);
+                    PhoneAuthCredential credential = PhoneAuthProvider.getCredential(codebysystem, codebyuser);
+                    mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(Verification.this, "LOGIN SUCCESSFUL", Toast.LENGTH_SHORT).show();
+                                mail.setVisibility(View.INVISIBLE);
+                                OTP.setVisibility(View.INVISIBLE);
+                                verifyy.setVisibility(View.INVISIBLE);
+                                TXTVnumber.setVisibility(View.INVISIBLE);
+                                shownumber.setVisibility(View.INVISIBLE);
+                                verify.setVisibility(View.VISIBLE);
+                                verifynext.setVisibility(View.VISIBLE);
 //                            finishAffinity();
-//                        }else{
-//                            Toast.makeText(Verification.this, "FAILED", Toast.LENGTH_SHORT).show();
-//                        }
-                    }
-//                });
-//            }
+                            } else {
+                                Toast.makeText(Verification.this, "FAILED", Toast.LENGTH_SHORT).show();
+                                pd.setTitle("Verification Failed");
+                                pd.setMessage("The verification CODE is incorrect , please try again...");
+                                pd.show();
+                            }
+                        }
+                    });
+                }
+            }
         });
 
         verifynext.setOnClickListener(new View.OnClickListener() {
@@ -130,7 +137,7 @@ public class Verification extends AppCompatActivity  {
     }
 
     private void sendVerification(String phonenumber) {
-        shownumber.setText("testing method  "+phonenumber);
+        shownumber.setText("OTP sent to  "+phonenumber);
         PhoneAuthOptions options = PhoneAuthOptions.newBuilder(mAuth)
                 .setPhoneNumber(phonenumber)
                 .setTimeout(60L ,TimeUnit.SECONDS)

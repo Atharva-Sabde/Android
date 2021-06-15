@@ -94,15 +94,15 @@ public class Signup extends AppCompatActivity {
     }
 
     public void onClick(View v){
-//        if(validateEmail() | validateName() | validateNumber() | validateAge()){
-//            return;
-//        }
-//        else{
-
-        Toast.makeText(this, "Switching to Verification", Toast.LENGTH_SHORT).show();
-        Intent verification = new Intent(this, Verification.class);
-
-        startActivity(verification);
+        if(validateEmail() | validateName() | validateNumber() | validateAge()){
+            return;
         }
-//    }
+        else{
+            String num = TXTnumber.getEditableText().toString().trim();
+            Toast.makeText(this, "Switching to Verification", Toast.LENGTH_SHORT).show();
+            Intent verification = new Intent(this, Verification.class);
+            verification.putExtra("number", num);
+            startActivity(verification);
+        }
+    }
 }
