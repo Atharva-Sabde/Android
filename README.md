@@ -69,3 +69,5 @@ When we click the run button in Android Studio, here are some of the things that
 - May need to build “event log” manually as well (in separate sub-tree?)
 - Implementation of REST API could be difficult on embedded platforms
 - Data validation rules do not support complex objects directly (you’d need to validate individual child nodes separately)
+
+![image](https://user-images.githubusercontent.com/67774570/122086056-fa630200-ce20-11eb-9c66-9ae5b3bda47f.png)
