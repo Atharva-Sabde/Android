@@ -87,10 +87,8 @@
 
     <EditText
         android:id="@+id/TXTage"
-        android:layout_width="80dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="40dp"
         android:drawablePadding="10dp"
         android:ems="10"
@@ -100,26 +98,24 @@
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TXTemail" />
+        app:layout_constraintStart_toStartOf="@+id/TXTemail"
+        tools:layout_editor_absoluteY="300dp" />
 
     <EditText
         android:id="@+id/TXTnumber"
         android:layout_width="172dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="40dp"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Mobile number..."
         android:inputType="phone"
         android:textColor="#000000"
         android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/TXTemail"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TXTemail" />
+        tools:layout_editor_absoluteY="300dp" />
 
     <EditText
         android:id="@+id/TXTemail"

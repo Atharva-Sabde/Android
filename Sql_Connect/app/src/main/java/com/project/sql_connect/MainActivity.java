@@ -19,9 +19,9 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String url = "jdbc:mysql://192.168.101.9:3306/codeheist";
-    private static final String user = "root";
-    private static final String pass = "9997";
+//    private static final String url = "jdbc:mysql://192.168.101.9:3306/codeheist";
+//    private static final String user = "root";
+//    private static final String pass = "9997";
     Button btnFetch,btnClear;
     TextView txtData;
 
@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... params) {
             try {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8889/java", "root", "2903");
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://192.168.1.6/java", "root", "2903");
                 //Log.d(MainActivity.LOG_TAG,"Database connection success");
 
                 String result = "Database Connection Successful\n";

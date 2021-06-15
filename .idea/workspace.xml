@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e2fbc67-16bf-476a-afcd-bc23d1891670" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Sql_Connect/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sql_Connect/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sql_Connect/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sql_Connect/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sql_Connect/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sql_Connect/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sql_Connect/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sql_Connect/app/libs/mysql-connector-java-8.0.23.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sql_Connect/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home_Services/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Home_Services/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home_Services/app/src/main/java/com/project/home_services/PasswordSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/Home_Services/app/src/main/java/com/project/home_services/PasswordSetup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home_Services/app/src/main/java/com/project/home_services/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/Home_Services/app/src/main/java/com/project/home_services/Signup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home_Services/app/src/main/java/com/project/home_services/Verification.java" beforeDir="false" afterPath="$PROJECT_DIR$/Home_Services/app/src/main/java/com/project/home_services/Verification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home_Services/app/src/main/res/layout/activity_forgot_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Home_Services/app/src/main/res/layout/activity_forgot_password.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home_Services/app/src/main/res/layout/activity_password_setup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Home_Services/app/src/main/res/layout/activity_password_setup.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5e2fbc67-16bf-476a-afcd-bc23d1891670" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
