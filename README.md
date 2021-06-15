@@ -47,3 +47,7 @@ When we click the run button in Android Studio, here are some of the things that
 - Locates and downloads the correct versions of any third-party libraries we need.
 - Calls the correct build tools in the correct sequence to turn all of our source code and resources into a deployable app.
 - Installs and runs our app on an Android device.
+
+<hr>
+<hr>
+### FIREBASE AUTHENTICATION
