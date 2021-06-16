@@ -87,7 +87,7 @@ public class Verification extends AppCompatActivity  {
                     finalNumber = TXTVnumber.getEditableText().toString().trim();
                     shownumber.setText("OTP sent to  "+finalNumber);
                     sendVerification(finalNumber);
-                    Toast.makeText(Verification.this, "starting verification... ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Verification.this, "Requesting OTP... ", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -120,6 +120,15 @@ public class Verification extends AppCompatActivity  {
                                 pd.setTitle("Verification Failed");
                                 pd.setMessage("The verification CODE is incorrect , please try again...");
                                 pd.show();
+//                                OTP.clearComposingText();
+//                                startActivity(new Intent(getApplicationContext(),Verification.class));
+//                                sendOTP.setVisibility(View.INVISIBLE);
+//                                OTP.setVisibility(View.VISIBLE);
+//                                verifyy.setVisibility(View.VISIBLE);
+//                                finalNumber = TXTVnumber.getEditableText().toString().trim();
+//                                shownumber.setText("OTP sent to  "+finalNumber);
+                                // ---------- make reverification of otp possible Bitch!!!!!!!!!! -----------
+
                             }
                         }
                     });

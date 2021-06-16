@@ -21,6 +21,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
@@ -44,15 +45,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth mAuth;
     private final static int RC_SIGN_IN = 1234;
 
-//    @Override
-//    protected void onStart() {        // this method will automatically login if the user is already signed in using google
-//        super.onStart();
-//        FirebaseUser user = mAuth.getCurrentUser();
-//        if(user !=null){
-//            Intent intent = new Intent(getApplicationContext(), HomePage.class  );
-//            startActivity(intent);
-//        }
-//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +91,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);              //Build a GOogleSignINClient
     }
-    private void signIn() {                                                     // THis method will be called when user click "google SignIN"
+    private void signIn() {
+        mGoogleSignInClient.signOut();
+        // THis method will be called when user click "google SignIN"
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();          //Will request an intent from system ,to choose from all accounts.
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
@@ -132,6 +126,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             // Sign in success, update UI with the signed-in user's information
 //                            Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            GoogleApiClient mGoogleApiClient;
+//                            mGoogleApiClient.clearDefaultAccountAndReconnect();
                             startActivity(new Intent(getApplicationContext(), HomePage.class));
 //                            updateUI(user);
                         } else {
