@@ -9,15 +9,6 @@
     android:textAlignment="center"
     tools:context=".MainActivity">
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
-        android:layout_width="318dp"
-        android:layout_height="41dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="520dp" />
-
     <Button
         android:id="@+id/BTNsignup"
         android:layout_width="0dp"
@@ -41,7 +32,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/round_bg"
         android:fontFamily="sans-serif-black"
@@ -52,47 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TXTpassword" />
-
-    <EditText
-        android:id="@+id/TXTpassword"
-        android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="40dp"
-        android:drawableStart="@android:drawable/ic_secure"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="password"
-        android:inputType="textWebPassword"
-        android:textColor="#000000"
-        android:textStyle="bold|italic"
-
-        app:endIconMode="password_toggle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TXTemailnum" />
-
-    <EditText
-        android:id="@+id/TXTemailnum"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="40dp"
-        android:drawableLeft="@drawable/phone"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="Email id"
-        android:inputType="textWebEmailAddress"
-        android:textColor="@color/black"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/waveTop" />
+        app:layout_constraintTop_toBottomOf="@+id/TXTinlayoutpass" />
 
     <View
         android:id="@+id/waveTopBase"
@@ -225,12 +176,61 @@
         android:id="@+id/IMGlogo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/TXTemailnum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/waveTopBase"
-        app:layout_constraintVertical_bias="0.696"
         app:srcCompat="@drawable/ic_home_address_50px" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TXTinlayoutmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="40dp"
+        android:hint="Email id"
+        app:boxBackgroundColor="@color/ColorBackground"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@android:drawable/stat_notify_error"
+        app:helperTextTextColor="@android:color/holo_orange_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IMGlogo"
+        app:startIconDrawable="@android:drawable/sym_action_email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TXTLemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TXTinlayoutpass"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="40dp"
+        android:hint="Password"
+        app:boxBackgroundColor="@color/ColorBackground"
+        app:endIconMode="password_toggle"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@android:drawable/stat_notify_error"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IMGlogo"
+        app:startIconDrawable="@android:drawable/ic_secure">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TXTLpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="302dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

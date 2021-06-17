@@ -25,6 +25,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button googlebtn;
 
     private ProgressBar LoginProgress;
-    private TextView TXTLemail;
+    private TextInputEditText TXTLemail;
     private TextView TXTLpassword;
 
     private GoogleSignInClient mGoogleSignInClient;
@@ -75,8 +76,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         forgotpass.setOnClickListener(this);
 
 
-        TXTLemail = findViewById(R.id.TXTemailnum);
-        TXTLpassword = findViewById(R.id.TXTpassword);
+        TXTLemail = findViewById(R.id.TXTLemail);
+        TXTLpassword = findViewById(R.id.TXTLpassword);
         LoginProgress = findViewById(R.id.LoginProgress);
 
         createRequest();
@@ -144,7 +145,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private boolean validateEmail() {
         String email = TXTLemail.getEditableText().toString().trim();
         if (email.isEmpty()) {
-            TXTLemail.setError("Field can't be empty!");
             return true;
         } else {
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
